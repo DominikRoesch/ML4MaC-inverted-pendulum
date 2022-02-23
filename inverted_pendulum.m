@@ -54,11 +54,12 @@ t = linspace(0,simsteps,simsteps+1);
 t = t*t_disc;
 
 % Plot the results
-figure
-plot(t,x_vec(1,:),t,x_vec_nl(1,:),t,x_vec_lqr(1,:),t,x_vec_lqr_nl(1,:));
+fig1 = figure;
+plot(t,x_vec(1,:),t,x_vec_nl(1,:),'--',t,x_vec_lqr(1,:),t,x_vec_lqr_nl(1,:),'--');
 xlabel('time in seconds') 
 ylabel('angle theta in rad')
 legend('NN linear','NN nonlinear','LQR linear','LQR nonlinear','Location','east');
-%title('Stabilization of the inverse pendulum with different approaches');
+title('Stabilization of the inverse pendulum with different approaches');
+
 
 
